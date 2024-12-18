@@ -1,0 +1,71 @@
+/* קונטיינר הכל */
+.navbar {
+    background-color: white;
+    direction: rtl;
+    display: flex;
+    justify-content: space-between; /* הלוגו בצד שמאל והקישורים במרכז */
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* קובעת את הניו בר כקבוע על המסך */
+    top: 0; /* ממקמת אותו בחלק העליון של המסך */
+    width: 100%; 
+    z-index: 1000; /* מבטיחה שהניו בר יהיה מעל שאר האלמנטים */
+    box-sizing: border-box; /* לוודא שהמרווחים לא ישפיעו על הגודל הכולל */
+    min-height: 60px; /* להוסיף גובה מינימלי לניו בר */
+}
+
+/* מיקום הלוגו בצד שמאל */
+.logo-container {
+    flex: 0 0 auto; 
+}
+
+/* עיצוב הלוגו */
+.logo {
+    width: 100px;  /* גודל הלוגו */
+    height: auto; /* שמור על פרופורציות הלוגו */
+}
+
+/* מיקום הקישורים במרכז */
+.links-container {
+    display: flex;
+    justify-content: center; /* המיקום המרכזי של הקישורים */
+    gap: 20px;
+    width: 100%; /* כדי למנוע שהתוכן יתפשט */
+}
+
+/* עיצוב הקישורים */
+.nav-link {
+    text-decoration: none; /* הסרת קו תחתון ברירת מחדל */
+    color: #204160;  /* צבע טקסט כחול */
+    font-size: 20px; /* גודל טקסט גדול */
+    position: relative; /* נדרש להנחת הקו תחתון */
+    transition: color 0.3s ease, transform 0.3s ease; /* אנימציה עדינה */
+}
+
+/* שינוי צבע והגדלה כאשר עובר על הקישור */
+.nav-link:hover {
+    color: #E77979; /* צבע צהוב בהעברה */
+    transform: scale(1.1); /* הגדלת הקישור באיטיות */
+}
+
+/* קו תחתון כחול שיתפשט */
+.nav-link::after {
+    content: ""; /* יוצרת אלמנט לא נראה */
+    position: absolute; /* ממקמת את הקו התחתון */
+    bottom: 0; /* ממקמת את הקו על הקצה התחתון של הקישור */
+    left: 0; /* מתחילה את הקו בצד השמאלי */
+    width: 0; /* מתחילה עם רוחב 0 */
+    height: 2px; /* גובה הקו */
+    background-color: #E77979; /* צבע הקו ורוד */
+    transition: width 0.3s ease; /* אנימציה שמורידה את הרוחב באיטיות */
+}
+
+/* כשהקישור נמצא במצב hover */
+.nav-link:hover::after {
+    width: 100%; /* כשהקישור מואר, הקו יתפשט לרוחב מלא */
+}
+
+/* מרווח נוסף מתחת לניו בר (למנוע חיתוך הלוגו) */
+body {
+    margin-top: 80px; /* להוסיף מרווח למעלה של הדף, כך שהתוכן לא יתחיל מתחת לניו בר */
+}

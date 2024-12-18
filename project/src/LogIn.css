@@ -1,0 +1,149 @@
+.section1 {
+    font-family: 'Varela Round', sans-serif;
+    direction: rtl;
+    background-image: url('./assets/gradiant.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: calc(100vh - 80px); /* גובה המסך פחות גובה ה-navbar */
+    position: relative; /* חשוב למיקום יחסית לתמונות */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* ממרכז את כל התוכן בצורה אופקית */
+    align-items: center; /* ממרכז את התוכן בצורה אנכית */
+    height: 100%; /* מבטיח שהתוכן יתפוס את כל גובה הדף */
+    position: relative; /* נדרש למיקום התמונות ביחס אל הקונטיינר */
+}
+
+.text-box {
+    padding: 40px 120px;
+    background-color: white; 
+    border-radius: 200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 300px; /* הגדרת רוחב קבוע לתיבת הטקסט */
+    position: relative; /* כדי שהתמונות יהיו מתחת לטופס */
+    z-index: 10; /* מבטיח שהטופס יהיה מעל התמונות */
+}
+
+.text-box input {
+    font-family: 'Varela Round', sans-serif;
+    width: 100%; /* כל הקלטים יתפוס את כל רוחב תיבת הטקסט */
+    margin-bottom: 15px; /* רווח בין כל שדה טקסט */
+    padding: 15px; /* פחות padding לעומת קודם */
+    border: solid #204160 1px;
+    border-radius: 150px; /* עיגול יותר קטן לפינות */
+    font-size: 16px;
+    color: white; /* צבע הטקסט בשדה יהיה לבן */
+    background-color: #204160; /* רקע כחול לשדה */
+}
+
+.text-box input::placeholder {
+    opacity: 0.5;
+    color: white; /* צבע הלבן לפלאסדהולד */
+}
+
+.smile {
+    display: flex; /* הופך את התמונה לרכיב גמיש */
+    justify-content: center; /* ממקם את התמונה במרכז */
+    align-items: center; /* ממקם את התמונה במרכז גם אנכית */
+}
+
+.smile img {
+    width: 30%; /* מקטין את התמונה לגודל חצי מתוך התיבה */
+}
+
+/* עיצוב התמונות "MA" ו-"GCI" */
+.letters {  
+    animation: slideDown 2s ease-in-out forwards, shake 0.5s ease-in-out 2.5s; /* מוסיף רטט קל לאחר ההגעה */
+    width: 25%; 
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%); 
+    z-index: 5;
+}
+
+
+.letters:first-child {
+    left: 12%; /* ממקם את התמונה הראשונה בצד שמאל */
+}
+
+#GCI{
+        right: 15%; /* ממקם את התמונה השנייה בצד ימין בצורה בולטת יותר */
+
+}
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+ 
+  
+/*  עיצוב הכפתור */
+.play-button {
+    font-family: 'Varela Round', sans-serif;
+    width: 50%; /* רוחב הכפתור */
+    padding: 15px; /* Padding */
+    border: none; /* אין גבול מסביב לכפתור */
+    border-radius: 30px; /* עיגול הפינות */
+    font-size: 16px;
+    color: white; /* צבע הטקסט */
+    background-color: #204160; /* צבע הרקע של הכפתור */
+    cursor: pointer; /* סמן משתנה כשמעבירים עכבר */
+    position: relative; /* מאפשר אנימציה */
+    overflow: hidden; /* מכסה את התוכן שיוצא מחוץ לכפתור */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* אפקטים של מעבר */
+}
+
+/* שינוי צבע הרקע של הכפתור כאשר העכבר עליו */
+.play-button:hover {
+    background-color: #E77979; /* שינוי צבע הרקע */
+    color: #fff; /* שינוי צבע הטקסט בעת hover */
+}
+
+/* הוספת קו תחתון משתנה בעת hover */
+.play-button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px; /* גובה הקו */
+    background-color: #E77979; /* צבע הקו */
+    transition: width 0.3s ease; /* אנימציה של רוחב הקו */
+}
+
+/* כשהעכבר מעל הכפתור, הקו יתפשט */
+.play-button:hover::after {
+    width: 100%; /* הקו יתפשט לרוחב מלא */
+}
+
+footer {
+    text-align: center;
+    color: #204160;
+}
+
+/* הגדרת האנימציה של עיגול סיבוב */
+.spinner {
+    border: 4px solid #f3f3f3; /* צבע הרקע של העיגול */
+    border-top: 4px solid #3498db; /* צבע החלק העליון של העיגול */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite; /* אנימציה של סיבוב אינסופי */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

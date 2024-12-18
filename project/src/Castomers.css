@@ -1,0 +1,46 @@
+.castomers{
+    height: calc(100vh - 100px); /* גובה המסך פחות גובה ה-navbar */
+    background-color: white;
+    border-bottom: 20px #E77979 solid ;
+}
+.lahit{
+    background-image: url('./assets/gradiant.png'); 
+  font-size: 40px;
+  padding: 3px 89% 3px 1%;
+  color: white;
+  direction: ltr;
+
+}
+.try{
+
+    background-image: url('./assets/circleGradiant.png'); 
+    background-repeat: no-repeat;
+    
+
+}
+.try img{
+width: 10%;
+padding: 3% 1%;
+}
+.all{
+    gap: 2%;
+    margin: 2%;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+}
+.circles{
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    margin-top: 150px;
+
+}
+.circles img{
+    width: 80px;
+    height: 80px;
+
+}
+#circle{
+    width:20%;
+}

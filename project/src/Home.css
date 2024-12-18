@@ -1,0 +1,80 @@
+.home {
+    background-image: url('./assets/gradiant.png'); /* הגדרת התמונה כרקע */
+    background-size: cover; /* התמונה תכסה את כל המסך */
+    background-position: center; /* מיקום התמונה במרכז */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+    height: 100vh; /* גובה המסך המלא */
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: center; /* מיקום התוכן במרכז */
+    align-items: center; /* מיקום התוכן במרכז אנכית */
+    color: white; /* צבע הטקסט שיהיה בולט על הרקע */
+}
+
+h1 {
+    font-size: 200px;
+    font-weight: bold;
+    color:#31B489 ;
+}
+/* קונטיינר התמונות */
+.fourPictures {
+    display: flex; /* כל התמונות יהיו בשורה אחת */
+    justify-content: space-between; /* הפיזור בין התמונות באופן שווה */
+    align-items: center; /* מיקום התמונות במרכז אנכית */
+    width: 100%; /* להבטיח שהקונטיינר יתפוס את כל הרוחב */
+    height: 100vh; /* התמונות יתפוס את כל גובה המסך */
+    padding: 0 20px; /* הוספת רווחים סביב */
+}
+
+/* עיצוב התמונות */
+.fourPictures img {
+    width: 23%; /* כל תמונה תתפוס 23% מהרוחב, כך שיתאימו כולן */
+    height: auto; /* שמירה על פרופורציות התמונה */
+    object-fit: cover; /* התמונה תכסה את הריבוע שלה */
+}
+
+/* אם רוצים שהתמונות יהיו במידות קטנות יותר ולא יתפשטו, ניתן לקבוע גודל אחיד */
+.circleImage {
+    max-width: 100%; /* שמירה על גודל מקסימלי אחיד */
+    height: auto; /* שמירה על פרופורציות */
+}
+/* הגדרת האנימציה */
+@keyframes slideInAndGrow {
+    0% {
+        transform: translateY(-100px) scale(0.5); /* מתחילים מעל המסך וקטנים */
+        opacity: 0; /* בהתחלה לא נראים */
+    }
+    100% {
+        transform: translateY(0) scale(1); /* סיום במקום המקורי וגדולים */
+        opacity: 1; /* הופכים לנראים */
+    }
+}
+
+/* עיצוב החלק שמכיל את הטקסט */
+.home h1 {
+    font-size: 60px; /* גודל התחלתי של הטקסט */
+    font-weight: bold; /* טקסט בעובי גדול */
+    color: #333; /* צבע טקסט כהה */
+    text-align: center; /* מיקום הטקסט במרכז */
+    animation: slideInAndGrow 1.5s ease-out; /* החלת האנימציה */
+    animation-delay: 0.5s; /* מוסיף עיכוב קל לפני התחלת האנימציה */
+}
+
+.fourCircles{
+    width: 100vh;
+}
+.fourText{
+    color:#204160 ;
+    margin:0% 25%;
+    direction: rtl;
+   display: flex;
+   gap: 0% 15%;
+}
+.section-fourCircles{
+    margin: 1%;
+text-align: center;
+}
+
+/* 31B489 ירוק
+204160 כחול
+E77979 ורוד
+FFFFFF לבן */
